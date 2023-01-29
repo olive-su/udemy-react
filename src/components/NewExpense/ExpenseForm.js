@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // 컴포넌트 당 두 개 이상의 상태를 가질 수도 있다.
   // 각각의 상태 관리하는 방법
   //   const [enteredTitle, setEnteredTitle] = useState("");
@@ -53,8 +53,10 @@ const ExpenseForm = () => {
       amount: userInput.enteredAmount,
       date: new Date(userInput.enteredDate),
     };
-
     console.log(expenseData);
+
+    props.onSaveExpenseData(expenseData); // 자식 컴포넌트가 부모 컴포넌트에 있는 함수를 실행할 수 있다.
+    // 입력 폼으로 받은 데이터들을 상위 컴포넌트에 넘겨준다.
     setUserInput({
       enteredTitle: "",
       enteredAmount: "",
