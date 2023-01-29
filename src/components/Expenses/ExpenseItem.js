@@ -12,15 +12,17 @@ const ExpenseItem = props => {
     };
 
     return (
-        <Card className="expense-item">
-            <ExpenseDate date={props.date} />
-            <div className="expense-item__description">
-                <h2>{props.title}</h2>
-                <div className="expense-item__price">${props.amount}</div>
-            </div>
-            <button onClick={clickHandler}>Change Title</button>
-            {/* 1. clickHandler를 트리거 함수로 지정하면 버튼을 클릭할 때마다 해당 함수가 작동한다. */}
-        </Card>
+        <li>
+            <Card className="expense-item">
+                <ExpenseDate date={props.date} />
+                <div className="expense-item__description">
+                    <h2>{props.title}</h2>
+                    <div className="expense-item__price">${props.amount}</div>
+                </div>
+                <button onClick={clickHandler}>Change Title</button>
+                {/* 1. clickHandler를 트리거 함수로 지정하면 버튼을 클릭할 때마다 해당 함수가 작동한다. */}
+            </Card>
+        </li>
     );
 };
 
